@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -90,7 +90,7 @@ namespace UnlockECU
             }
             return input;
         }
-        static uint RotateRight(uint input, int rotations)
+        static new uint RotateRight(uint input, int rotations)
         {
             for (int i = 0; i < rotations; i++)
             {

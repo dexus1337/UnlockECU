@@ -21,7 +21,7 @@ namespace UnlockECUTests
         {
             string dbPath = $"{GetLibraryFolder()}db.json";
             string definitionJson = File.ReadAllText(dbPath);
-            List<Definition> definitions = System.Text.Json.JsonSerializer.Deserialize<List<Definition>>(definitionJson);
+            List<Definition> definitions = Definition.DeserializeList(definitionJson);
             List<SecurityProvider> providers = SecurityProvider.GetSecurityProviders();
 
             QuickTest(definitions.Find(x => (x.EcuName == "CRD3S2SEC9A") && (x.AccessLevel == 9) && (x.Provider == "DaimlerStandardSecurityAlgo")), providers);

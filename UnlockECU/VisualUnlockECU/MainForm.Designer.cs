@@ -1,4 +1,4 @@
-﻿
+
 namespace VisualUnlockECU
 {
     partial class MainForm
@@ -79,7 +79,6 @@ namespace VisualUnlockECU
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFilter.Location = new System.Drawing.Point(6, 22);
             this.txtFilter.Name = "txtFilter";
-            this.txtFilter.PlaceholderText = "Filter module by name";
             this.txtFilter.Size = new System.Drawing.Size(1106, 23);
             this.txtFilter.TabIndex = 0;
             this.txtFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -128,7 +127,6 @@ namespace VisualUnlockECU
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKeyValue.Location = new System.Drawing.Point(6, 48);
             this.txtKeyValue.Name = "txtKeyValue";
-            this.txtKeyValue.PlaceholderText = "Output seed value (read-only)";
             this.txtKeyValue.ReadOnly = true;
             this.txtKeyValue.Size = new System.Drawing.Size(1025, 23);
             this.txtKeyValue.TabIndex = 1;
@@ -140,7 +138,6 @@ namespace VisualUnlockECU
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSeedValue.Location = new System.Drawing.Point(6, 22);
             this.txtSeedValue.Name = "txtSeedValue";
-            this.txtSeedValue.PlaceholderText = "Enter seed value in hex (e.g. 00 11 22 33)";
             this.txtSeedValue.Size = new System.Drawing.Size(1025, 23);
             this.txtSeedValue.TabIndex = 0;
             this.txtSeedValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

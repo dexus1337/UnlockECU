@@ -1,4 +1,4 @@
-﻿using Org.BouncyCastle.Crypto.Parameters;
+using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Crypto.Signers;
 using System;
 using System.Collections.Generic;
@@ -22,8 +22,8 @@ namespace UnlockECU
                 return false;
             }
 
-            Ed25519PrivateKeyParameters privateKey = new(privateKeyBytes, 0);
-            Ed25519phSigner signer = new(Array.Empty<byte>());
+            Ed25519PrivateKeyParameters privateKey = new Ed25519PrivateKeyParameters(privateKeyBytes, 0);
+            Ed25519phSigner signer = new Ed25519phSigner(new byte[0]);
             signer.Init(true, privateKey);
             signer.BlockUpdate(inSeed, 0, inSeed.Length);
             byte[] signature = signer.GenerateSignature();

@@ -21,7 +21,7 @@ namespace UnlockECUTests
                 "Library",
                 "db.json");
             string definitionJson = File.ReadAllText(dbPath);
-            definitions = System.Text.Json.JsonSerializer.Deserialize<List<Definition>>(definitionJson);
+            definitions = Definition.DeserializeList(definitionJson);
             providers = SecurityProvider.GetSecurityProviders();
             ic204Provider = providers.Find(x => x.GetProviderName() == "IC204");
         }

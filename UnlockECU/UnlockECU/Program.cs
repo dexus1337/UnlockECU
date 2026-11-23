@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ namespace UnlockECU
 
 			string definitionJson = File.ReadAllText("db.json");
 
-            List<Definition> definitions = System.Text.Json.JsonSerializer.Deserialize<List<Definition>>(definitionJson);
+            List<Definition> definitions = Definition.DeserializeList(definitionJson);
             List<SecurityProvider> providers = SecurityProvider.GetSecurityProviders();
 
             Console.ReadKey();

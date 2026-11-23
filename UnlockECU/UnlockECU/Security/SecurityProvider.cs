@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -67,7 +67,7 @@ namespace UnlockECU
         }
 
         private static bool IsInitialized = false;
-        private static List<SecurityProvider> SecurityProviders = new();
+        private static List<SecurityProvider> SecurityProviders = new List<SecurityProvider>();
 
         public static List<SecurityProvider> GetSecurityProviders()
         {

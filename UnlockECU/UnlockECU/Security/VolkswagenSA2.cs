@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,7 +36,7 @@ namespace UnlockECU
     {
         uint Register = 0;
         uint CarryFlag = 0;
-        byte[] InstructionTape = Array.Empty<byte>();
+        byte[] InstructionTape = new byte[0];
         uint InstructionPointer = 0;
         List<uint> ForPointers = new List<uint>();
         List<int> ForIterations = new List<int>();

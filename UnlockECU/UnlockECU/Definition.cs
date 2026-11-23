@@ -1,6 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,8 +20,20 @@ namespace UnlockECU
         public string Origin { get; set; }
         public List<Parameter> Parameters { get; set; }
 
-        [System.Text.Json.Serialization.JsonIgnore]
+        [IgnoreDataMember]
         public string ParamParent;
+
+        /// <summary>
+        /// Deserializes a JSON array of ECU definitions using DataContractJsonSerializer (compatible with .NET Framework 4.0+).
+        /// </summary>
+        public static List<Definition> DeserializeList(string json)
+        {
+            var serializer = new DataContractJsonSerializer(typeof(List<Definition>));
+            using (var stream = new MemoryStream(Encoding.UTF8.GetBytes(json)))
+            {
+                return (List<Definition>)serializer.ReadObject(stream);
+            }
+        }
 
         public override string ToString()
         {

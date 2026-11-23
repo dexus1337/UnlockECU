@@ -1,4 +1,4 @@
-﻿using Mono.Options;
+using Mono.Options;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -90,7 +90,7 @@ namespace ConsoleUnlockECU
             List<Definition> definitions = new List<Definition>();
             try
             {
-                definitions = System.Text.Json.JsonSerializer.Deserialize<List<Definition>>(definitionJson);
+                definitions = Definition.DeserializeList(definitionJson);
             }
             catch (Exception ex)
             {

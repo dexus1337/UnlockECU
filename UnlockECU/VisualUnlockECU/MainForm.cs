@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,7 +22,7 @@ namespace VisualUnlockECU
             if (File.Exists(dbFile))
             {
                 string definitionJson = File.ReadAllText(dbFile);
-                Definitions = System.Text.Json.JsonSerializer.Deserialize<List<Definition>>(definitionJson);
+                Definitions = Definition.DeserializeList(definitionJson);
             }
             else 
             {
@@ -65,7 +65,8 @@ namespace VisualUnlockECU
                 {
                     continue;
                 }
-                if (!definition.Origin.ToLower().Contains(filter.ToLower()))
+                string lowerFilter = filter.ToLower();
+                if (!definition.Origin.ToLower().Contains(lowerFilter) && !definition.EcuName.ToLower().Contains(lowerFilter))
                 {
                     continue;
                 }

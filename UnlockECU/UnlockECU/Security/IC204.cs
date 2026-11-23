@@ -27,14 +27,19 @@ namespace UnlockECU
         // UDS 0x01 -> internal 1, UDS 0x03 -> internal 3, UDS 0x09 -> internal 5, UDS 0x0D -> internal 7
         private static int UdsToInternalLevel(int udsLevel)
         {
-            return udsLevel switch
+            switch (udsLevel)
             {
-                0x01 => 1,
-                0x03 => 3,
-                0x09 => 5,
-                0x0D => 7,
-                _ => (udsLevel + 1) / 2,
-            };
+                case 0x01:
+                    return 1;
+                case 0x03:
+                    return 3;
+                case 0x09:
+                    return 5;
+                case 0x0D:
+                    return 7;
+                default:
+                    return (udsLevel + 1) / 2;
+            }
         }
 
         /// <summary>
